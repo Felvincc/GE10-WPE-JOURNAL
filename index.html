@@ -8,198 +8,231 @@
 
     <style>
       body {
-        background-color: #f4f8fb;
+        background: linear-gradient(135deg, #e9f2fb 0%, #f8fbff 100%);
+        font-family: "Poppins", sans-serif;
+        color: #002b5b;
+        overflow-x: hidden;
       }
 
+      h1, h2 {
+        font-weight: 700;
+      }
+
+      /* ===== Navbar ===== */
       .navbar {
-        background-color: #002b5b !important;
+        background: linear-gradient(90deg, #002b5b, #004080);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
       }
 
-      .navbar a,
       .navbar-brand {
+        font-weight: 600;
+        letter-spacing: 0.5px;
         color: white !important;
       }
 
+      /* ===== Section Cards ===== */
       .section {
         background-color: white;
-        border-radius: 15px;
-        padding: 30px;
-        margin: 30px auto;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        width: 90%;
-        max-width: 1200px;
+        border-radius: 20px;
+        padding: 50px;
+        margin: 40px auto;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        width: 95%;
+        max-width: 1600px;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .section h2 {
         text-align: center;
         color: #002b5b;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
       }
 
+      /* ===== Image Grid Items ===== */
       .item {
+        position: relative;
         background-color: #e3f2fd;
-        border-radius: 10px;
+        border-radius: 12px;
         padding: 15px;
         text-align: center;
-        transition: transform 0.2s;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        cursor: pointer;
+        margin: 5px; /* Small space between items */
       }
 
       .item:hover {
-        transform: translateY(-5px);
+        transform: translateY(-6px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
       }
 
       .item img {
         width: 100%;
-        max-width: 200px;
-        border-radius: 8px;
+        max-width: 230px;
+        border-radius: 10px;
         margin-bottom: 10px;
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
+      .item:hover img {
+        transform: scale(1.05);
+        filter: brightness(0.9);
       }
 
       .item p {
         color: #003366;
+        font-weight: 500;
       }
 
+      /* ===== Buttons ===== */
+      .more-btn {
+        display: block;
+        margin: 40px auto 0 auto;
+        background-color: #002b5b;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 14px 40px;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      .more-btn:hover {
+        background-color: #004080;
+        transform: translateY(-3px);
+      }
+
+      /* ===== Footer ===== */
+      footer {
+        background-color: #002b5b;
+        color: #ffffffcc;
+        font-size: 0.95rem;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      /* ===== Small Screens ===== */
+      @media (max-width: 992px) {
+        .section {
+          width: 95%;
+          padding: 30px;
+        }
+
+        .item img {
+          max-width: 160px;
+        }
+      }
     </style>
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">GallerySite</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg py-3">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="#">GE 10 Journal</a>
       </div>
     </nav>
 
+    <!-- Header -->
     <div class="container text-center my-5">
-      <h1 class="text-primary mb-4">5 C's of Silliman</h1>
-      <p class="text-muted"><b>Click the pictures for more information.</b></p>
+      <h1 class="text-primary mb-3 fw-bold">The 5 C's of Silliman</h1>
+      <p class="text-muted fs-5"><b>Click a picture to learn more about each experience.</b></p>
     </div>
 
+    <div class="container-fluid px-0">
 
-
-    <!-- 5 Sections -->
-    <div class="container">
-
+      <!-- Section: Introduction -->
       <div class="section">
         <h2>Introduction</h2>
-        <p>This is an introduction, these are words. Hello</p>
-
+        <p class="text-center mx-auto" style="max-width: 900px;">
+          Welcome to my GE10 Website Journal, the following is a compilation for the 5 C's of Silliman. This 1st semester was filled with 
+          events that I usually would never join or participate in. But in joining these activities, events, and organizations, I met so many
+          amazing people, forever friends, and discovered some passions I have for some of the entries in this journal. Though it was tiring at
+          time finding the energy to get up and attend some of these events for the sake of compliance, I dont regret any of those action, because
+          I had so much fun listening, participating, or simply just being at the place of the event. I hope you enjoy checking these journal entries
+          out as much as I did doing them in person!
+        </p>
+        <button class="more-btn">More Information</button>
       </div>
 
-      <!-- Section Loop Example -->
+      <!-- Section: Classroom -->
       <div class="section">
         <h2>Classroom</h2>
         <div class="row justify-content-center g-4">
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg"alt="placeholder">
-            <p>Balik Talent (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Campus Tour (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>CCS Orientation (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Freshmen Orientation (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Genesis (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>ROTC ADOBE (2pt)</p>
-          </div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/classroom/balik_talent.html "><img src="thumbnail/baliktalent.jpg" alt="placeholder"></a><p>Balik Talent (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/classroom/campus_tour.html "><img src="thumbnail/campus_tour.png" alt="placeholder"></a><p>Campus Tour (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/classroom/ccs_orientation.html "><img src="thumbnail/ccs_orientation.jpg" alt="placeholder"></a><p>CCS Orientation (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/classroom/freshmen_orientation.html "><img src="thumbnail/freshmen_orientation.jpg" alt="placeholder"></a><p>Freshmen Orientation (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/classroom/genesis.html "><img src="thumbnail/genesis.jpg" alt="placeholder"></a><p>Genesis (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/classroom/adobe.html "><img src="thumbnail/adobe.jpg" alt="placeholder"></a><p>ROTC ADOBE (2pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/classroom/ccs_shirt.html "><img src="thumbnail/ccs_shirt.jpg" alt="placeholder"></a><p>CCS Shirt (4pt)</p></div>
         </div>
       </div>
 
-      <!-- Duplicate for 5 sections -->
+      <!-- Section: Culture -->
       <div class="section">
         <h2>Culture</h2>
         <div class="row justify-content-center g-4">
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Hibalag Opening Perfomance (4pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Aesthetics Head/Parada. (4pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>ASIN Luce Performance (1pt)</p>
-          </div>
-
-          </div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/culture/hibalag_performance.html"><img src="thumbnail/hibalag_performance.png" alt="placeholder"></a><p>Hibalag Opening Performance (4pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/culture/aesthetics.html"><img src="thumbnail/aesthetics.jpg" alt=""></a><p>Aesthetics Head/Parada (4pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/culture/asin.html"><img src="thumbnail/asin.jpg" alt=""></a><p>ASIN Luce Performance (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/culture/cas_performance.html"><img src="thumbnail/cas_performance.jpg" alt=""></a><p>CAS Battle of the Bands (4pts)</p></div>
         </div>
       </div>
 
+      <!-- Section: Court -->
       <div class="section">
         <h2>Court</h2>
         <div class="row justify-content-center g-4">
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Hibalag Cup Basketball (Alaska) (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Hibalag Cup Frisbee (Cimafranca) (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Hibalag Cup Pickleball (Gym) (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Hibalag Cup Volleyball (Alaska) (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Description text here. (1pt)</p>
-          </div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/court/basket.html"><img src="thumbnail/basket_alaska.jpg" alt="placeholder"></a><p>Hibalag Cup Basketball (Alaska) (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/court/frisbee.html"><img src="thumbnail/frisbee_cima.jpg" alt="placeholder"></a><p>Hibalag Cup Frisbee (Cimafranca) (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/court/pickleball.html"><img src="thumbnail/pickleball_gym.jpg" alt="placeholder"></a><p>Hibalag Cup Pickleball (Gym) (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/court/volleyball.html"><img src="thumbnail/volley_alaska.jpg" alt="placeholder"></a><p>Hibalag Cup Volleyball (Alaska) (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/court/billiards.html"><img src="thumbnail/billiards.jpg" alt="placeholder"></a><p>Billiards Tournament (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/court/badminton.html"><img src="thumbnail/badminton.PNG" alt="placeholder"></a><p>Badminton Tournament (3pt)</p></div>
         </div>
       </div>
 
+      <!-- Section: Community -->
       <div class="section">
         <h2>Community</h2>
         <div class="row justify-content-center g-4">
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Feeding Program (2pt)</p>
-          </div>
-
-
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/community/feeding_program.html"><img src="thumbnail/feeding_program.JPG" alt="placeholder"></a><p>Feeding Program (2pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/community/beach_cleanup.html"><img src="thumbnail/beach_cleanup.jpg" alt="placeholder"></a><p>Beach Cleanup (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/community/chs.html"><img src="thumbnail/chs.JPG" alt="placeholder"></a><p>CHS Feeding program/Exodus Story telling (3pts)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/community/white_orphan.html"><img src="thumbnail/white_orphan.jpg" alt="placeholder"></a><p>White Orphanage Gift Giving (1pts)</p></div>
+        </div>
+        
         </div>
       </div>
 
+      <!-- Section: Church -->
       <div class="section">
-        <h2>Church </h2>
+        <h2>Church</h2>
         <div class="row justify-content-center g-4">
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Christian Night (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Church 1 (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Church 2 (1pt)</p>
-          </div>
-          <div class="col-md-4 col-lg-2 item">
-            <img src="placeholder.jpg" alt="placeholder">
-            <p>Church 3 (1pt)</p>
-          </div>
-
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/church/christian_night.html"><img src="thumbnail/christian_night.jpg" alt="placeholder"></a><p>Christian Night (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/church/church1.html"><img src="thumbnail/church_1.jpg" alt="placeholder"></a><p>Church 1 (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/church/church2.html"><img src="thumbnail/church_2.jpg" alt="placeholder"></a><p>Church 2 (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/church/church3.html"><img src="thumbnail/church_3.jpg" alt="placeholder"></a><p>Church 3 (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/church/uclem.html"><img src="thumbnail/uclem.jpg" alt="placeholder"></a><p>UCLEM (1pt)</p></div>
+          <div class="col-md-4 col-lg-2 item"><a href="5cs/church/god_cares.html"><img src="thumbnail/god_cares.jpg" alt="placeholder"></a><p>God Cares (1pt)</p></div>
         </div>
       </div>
     </div>
 
-    <footer class="text-center p-3 mt-5 text-light" style="background-color: #002b5b;">
+    <!-- Footer -->
+    <footer class="text-center py-3 mt-5">
       <p>Felvince JM E. Dy | BS Computer Science | First Year</p>
     </footer>
 
